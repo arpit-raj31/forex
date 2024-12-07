@@ -1,0 +1,123 @@
+/* Navbar Styles */
+
+body {
+  font-family: 'Roboto', sans-serif; /* Apply the Roboto font globally */
+}
+/* Navbar.css */
+.country-select {
+  width: 60px; 
+  height: 35px; 
+  background-color: transparent; 
+ /* Remove padding */
+  border: none; /* Remove border */
+}
+
+.country-select .react-flag-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  background-color: #F8F8FF; /* Light background color */
+  position: fixed; /* Fixes the navbar at the top of the viewport */
+  top: 0; /* Aligns it to the very top of the page */
+  left: 0; /* Ensures it spans the entire width of the viewport */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px; /* Height of the navbar */
+  padding: 0 16px; /* Padding on the left and right */
+  margin: 0; /* Removes any default margin */
+  width: 100%; /* Ensures the navbar spans the full width */
+  z-index: 1000; /* Ensures it appears above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+/* Icons Container */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between icons */
+}
+
+/* Button Styles */
+.icon-btn {
+  min-width: auto;
+  background: none; /* Remove button background */
+  border: none; /* Remove button border */
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Darker hover effect */
+  border-radius: 8px; /* Optional for rounded hover effect */
+}
+
+/* Icon Styles */
+.icon {
+  color:#39236C; /* Default icon color */
+  width: 20px;
+  height: 20px;
+}
+
+.icon-btn:hover .icon {
+  color: #c8b6e3; /* Slightly darker shade on hover */
+}
+
+/* Avatar Styles */
+.avatar {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 1rem;
+  background-color: #c8b6e3; /* Fallback color */
+  color: #39236C; /* Text inside avatar */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row; /* Ensure horizontal layout */
+    justify-content: space-between; /* Space logo and icons apart */
+    align-items: center; /* Align logo and icons vertically */
+    height: auto; /* Adjust height dynamically */
+    padding: 4px; /* Smaller padding for mobile */
+  }
+
+  .logo {
+    visibility: visible; /* Ensure the logo is always visible */
+    display: inline-block; /* Keep it inline */
+    max-width: 100px; /* Set a max width to prevent overflow */
+    height: auto;
+    margin-left: 6px; /* Maintain aspect ratio */
+  }
+
+  .icons {
+    display: flex; /* Ensure icons are in a row */
+    justify-content: flex-end; /* Align icons to the right */
+    gap: 0px; /* Add space between icons */
+  }
+
+  .icon-btn {
+    padding: 0px; /* Adjust padding for better mobile spacing */
+    font-size: 1.2rem; /* Slightly smaller icon size for mobile */
+  }
+}
+

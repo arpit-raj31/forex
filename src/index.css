@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media (max-width: 768px) {
+  .w-64 {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+}
