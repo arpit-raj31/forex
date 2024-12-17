@@ -8,11 +8,14 @@ import {
 } from "react-icons/fa";
 import { MdDashboard, MdOutlineSupportAgent } from "react-icons/md";
 import { AiOutlineBarChart } from "react-icons/ai";
-import "./../../../style/Sidebar.css"
+import { Link } from "react-router-dom";
+import "./../../../style/Sidebar.css";
+import Logout from './Logout';
+
 const Sidebar = ({ toggleSidebar }) => {
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
   const [isPerformanceOpen, setIsPerformanceOpen] = useState(false);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false); // State for Settings submenu
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const toggleAnalyticsMenu = () => {
     setIsAnalyticsOpen(!isAnalyticsOpen);
@@ -23,7 +26,7 @@ const Sidebar = ({ toggleSidebar }) => {
   };
 
   const toggleSettingsMenu = () => {
-    setIsSettingsOpen(!isSettingsOpen); // Toggle Settings submenu
+    setIsSettingsOpen(!isSettingsOpen);
   };
 
   return (
@@ -33,34 +36,34 @@ const Sidebar = ({ toggleSidebar }) => {
       </div>
       <ul className="sidebar-menu">
         <li>
-          <a href="/">
+          <Link to="/dashboard">
             <MdDashboard /> Dashboard
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/account">
+          <Link to="/account">
             <FaUserCircle /> My Account
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/deposit">
+          <Link to="/user-deposit">
             <FaWallet /> Deposit
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/withdrawal">
+          <Link to="/withdrawal">
             <FaWallet /> Withdrawal
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/history">
+          <Link to="/history">
             <AiOutlineBarChart /> Transaction History
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/trading-history">
+          <Link to="/trading-history">
             <AiOutlineBarChart /> Trading History
-          </a>
+          </Link>
         </li>
         {/* Analytics with Submenu */}
         <li>
@@ -73,37 +76,17 @@ const Sidebar = ({ toggleSidebar }) => {
           {isAnalyticsOpen && (
             <ul className="submenu">
               <li>
-                <a href="/analytics/economics-calendar">Economics Calendar</a>
+                <Link to="/analytics/economics-calendar">Economics Calendar</Link>
               </li>
               <li>
-                <a href="/analytics/analyst-news">Analyst News</a>
+                <Link to="/analytics/analyst-news">Analyst News</Link>
               </li>
               <li>
-                <a href="/analytics/market-views">Market Views</a>
+                <Link to="/analytics/market-views">Market Views</Link>
               </li>
             </ul>
           )}
         </li>
-        <li>
-          <div className="menu-item" onClick={togglePerformanceMenu}>
-            <FaChartLine /> Copy Trading
-            <FaChevronDown
-              className={`chevron-icon ${isPerformanceOpen ? "rotate" : ""}`}
-            />
-          </div>
-          {isPerformanceOpen && (
-            <ul className="submenu">
-            
-              <li>
-                <a href="/copytrading/all-strategies">All Strategies</a>
-              </li>
-              <li>
-                <a href="/copytrading/publish">Publlish Own Strategies</a>
-              </li>
-            </ul>
-          )}
-        </li>
-        
         {/* Performance with Submenu */}
         <li>
           <div className="menu-item" onClick={togglePerformanceMenu}>
@@ -115,24 +98,19 @@ const Sidebar = ({ toggleSidebar }) => {
           {isPerformanceOpen && (
             <ul className="submenu">
               <li>
-                <a href="/performance/history-of-order">History of Order</a>
+                <Link to="/performance/summary">Summary</Link>
               </li>
               <li>
-                <a href="/performance/summary">Summary</a>
-              </li>
-              <li>
-                <a href="/performance/forex-benefits">Forex Benefits</a>
+                <Link to="/performance/forex-benefits">Forex Benefits</Link>
               </li>
             </ul>
           )}
         </li>
-
         <li>
-          <a href="/support">
+          <Link to="/support">
             <MdOutlineSupportAgent /> Support Hub
-          </a>
+          </Link>
         </li>
-        
         {/* Settings with Submenu */}
         <li>
           <div className="menu-item" onClick={toggleSettingsMenu}>
@@ -144,12 +122,15 @@ const Sidebar = ({ toggleSidebar }) => {
           {isSettingsOpen && (
             <ul className="submenu">
               <li>
-                <a href="/settings/profile-manage">Profile Manage</a>
+                <Link to="/settings/profile-manage">Profile Manage</Link>
               </li>
             </ul>
           )}
         </li>
       </ul>
+      <div>
+        <Logout />
+      </div>
     </div>
   );
 };

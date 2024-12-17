@@ -1,6 +1,6 @@
 import React from "react";
 
-const Deposit = () => {
+const UserDeposit = () => {
   const cardStyle = {
     display: "flex",
     flexDirection: "column",
@@ -46,7 +46,7 @@ const Deposit = () => {
   };
 
   return (
-    <div>
+    <div style={{height:"100vh"}}>
       <h2 style={{ fontSize: "24px", fontWeight: "bold", margin: "20px 0" }}>Deposit</h2>
       <h4 style={{ fontSize: "18px", color: "#555" }}>All payment methods</h4>
 
@@ -112,4 +112,4 @@ const Deposit = () => {
   );
 };
 
-export default Deposit;
+export default UserDeposit;

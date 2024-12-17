@@ -1,343 +1,297 @@
-/* General Layout */
 .dashboard-container {
-    font-family: "Poppins", Arial, sans-serif;
-    background: linear-gradient(135deg, #f3ecfd, #f7f3fe);
-    padding: 20px;
-    color: #333;
-    min-height: 100vh;
-  }
-  
-  .dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    color: #362465;
-    font-size: 36px;
-    font-weight:800;
-  }
-  
-  .search-bar {
-    padding: 10px 15px;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    outline: none;
-    width: 250px;
-    transition: all 0.3s ease;
-  }
-  
-  .search-bar:focus {
-    border-color: #362465;
-    box-shadow: 0 0 10px#362465;
-  }
-  
-  .dashboard-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  /* Left Section - Dashboard Card */
-  .dashboard-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    width: 60%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .dashboard-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .dashboard-card h2 {
-    color: #362465;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-  
-  .dashboard-card p {
-    line-height: 1.6;
-    color: #666;
-  }
-  
-  .primary-button {
-    background: linear-gradient(90deg,#362465, #362465);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .primary-button:hover {
-    background: linear-gradient(90deg, #362465, #362465);
-    box-shadow: 0 5px 15px rgba(90, 63, 188, 0.2);
-  }
-  
-  .image-placeholder {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .image-placeholder img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Right Section - Trading Panel */
-  .trading-panel {
-    width: 35%;
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .trading-panel:hover {
-    transform: translateY(-5px);
-  }
-  
-  .tab-container {
-    display: flex;
-    margin: 10px 0;
-    border-bottom: 1px solid #ddd;
-    gap: 10px;
-  }
-  
-  /* Tabs */
-  .tab, .sub-tab {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    background-color: #f7f3fe;
-    color: #333;
-    font-weight: bold;
-    border-radius: 10px 10px 0 0;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .tab.active, .sub-tab.active {
-    background: linear-gradient(90deg, #362465, #362465);
-    color: white;
-    border-bottom: 2px solid transparent;
-    transform: translateY(-2px);
-  }
-  
-  .tab:not(.active):hover, .sub-tab:not(.active):hover {
-    background-color: #e5dcfc;
-    transform: translateY(-1px);
-  }
-  .text1{
-    color:#362465
-  }
-  .input-field {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .input-field:focus {
-    border-color:#362465;
-    box-shadow: 0 0 10px rgba(90, 63, 188, 0.2);
-  }
-  
-  .balance {
-    font-weight: 600;
-    color: #362465;
-    margin: 15px 0;
-  }
-  
-  .total {
-    margin: 10px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #362465;
-  }
-  
-  /* Stats Section */
-  .stats-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .stats-card {
-    background: #362465;
-    padding: 20px;
-    height: 200px;
-    border-radius: 15px;
-    width: 30%;
-    
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .stats-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .stats-card h3 {
-    color: #5a3fbc;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .stats-card p {
-    margin: 5px 0;
-    color: #fff;
-  }
-  
-  .profit {
-    color: #28a745;
-    font-weight: 600;
-  }
-  .search-container {
-    position: relative;
-    width: 250px;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar {
-    width: 100%;
-    padding: 10px 15px;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    outline: none;
-    padding-right: 40px; /* Space for the icon */
-    transition: all 0.3s ease;
-  }
-  
-  .search-bar:focus {
-    border-color: #5a3fbc;
-    box-shadow: 0 0 10px rgba(90, 63, 188, 0.2);
-  }
-  
-  .search-icon {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #aaa;
-    pointer-events: none; /* Prevents icon from blocking clicks on the input */
-  }  
-  /* Ensure the chart container has a proper size */
-#chart {
-  width: 100%;
-  max-width: 100%;
-  height: fit-content;
-  margin: 20px 0;
-  padding: 0;
-  background-color: #fff; /* Optional background color */
-  border-radius: 10px; /* Optional rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-.apexcharts-title-text {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 15px;
+.dashboard-header {
+  text-align: Left;
+  font-size: 36px;
+padding-left: 10px;
+  font-weight: bold;
+  color: #362465;
+  border-left: solid 7px #362465;
 }
-/* Order Tab Container */
-.order-tabs {
+.text1{
+margin-top: 40px;
+}
+.dashboard-content {
   display: flex;
-  justify-content: flex-start;
+  flex: 1;
   gap: 20px;
-  margin-top: 20px;
+}
+
+/* Left Section (70%) */
+.chart-section {
+  flex: 7;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Section (30%) */
+.trading-panel {
+  flex: 3;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styling */
+.search-container {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.order-tabs .tab {
-  background-color: #f5f5f5;
+.search-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ddd;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 6px;
+}
+
+.tab-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tab-container1 {
+  display: flex;
+  margin-top: 60px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab,
+.sub-tab {
+  flex: 1;
+  padding: 10px 15px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ddd;
   cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+  background-color: #f9f9f9;
 }
 
-.order-tabs .tab.active {
-  background-color: #5a3fbc;
-  color: #fff;
-  border-color: #5a3fbc;
+.tab.active,
+.sub-tab.active {
+  background-color: #362465;
+  color: white;
+  border: 1px solid #000;
 }
 
-.order-tabs .tab:hover {
-  background-color: #e6e6e6;
+.balance {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #362465;
 }
 
-/* Order Table */
-.order-table {
+.input-field {
   width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.total {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #362465;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  background-color: #362465;
+}
+.stats-container {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
-  overflow-x: auto;
 }
 
-.order-table table {
+.stats-card {
+  flex: 1;
+  background: #362465; /* Updated background color */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow for better contrast */
+  text-align: center;
+  margin: 0 10px;
+  color: #ffffff; /* Text color white */
+  font-weight: bold; /* Make text bold */
+  font-size: 16px; /* Improve readability with consistent font size */
+}
+
+.stats-card h3 {
+  font-size: 24px; /* Highlight primary value */
+  margin-bottom: 10px;
+}
+
+.stats-card p {
+  margin: 5px 0;
+  font-size: 14px; /* Smaller font for supplementary details */
+}
+
+.profit {
+  color: #28a745; /* Green color for profit values */
+  font-size: 18px; /* Slightly larger for emphasis */
+}
+
+.loss {
+  color: #dc3545; /* Red color for loss values */
+  font-size: 18px; /* Slightly larger for emphasis */
+}
+.balance1 {
+  color: #FFD700; /* Green color for profit values */
+  font-size: 18px; /* Slightly larger for emphasis */
+}
+
+/* Trading Panel */
+.trading-panel {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #aaa;
+}
+
+.search-bar {
   width: 100%;
-  border-collapse: collapse;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  background-color: #fff;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.order-table th, .order-table td {
-  padding: 12px 15px;
-  text-align: left;
+/* Trade Type Tabs */
+.tab-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f9f9f9;
+}
+
+.tab.active {
+  background: #362465;
+  color: #fff;
+}
+
+/* Form Fields */
+.form-container {
+  margin-top: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
   font-size: 14px;
   color: #333;
-  border-bottom: 1px solid #ddd;
 }
 
-.order-table th {
-  background-color: #f5f5f5;
-  font-weight: bold;
+.volume-control {
+  display: flex;
+  align-items: center;
 }
 
-.order-table td {
+.volume-control button {
+  width: 30px;
+  height: 30px;
+  background: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   font-size: 16px;
 }
 
-/* Styling for the "open" order status */
-.order-table .open {
-  color: #e74c3c; /* Red for open orders */
-  font-weight: 600;
+.volume-control input {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0 5px;
 }
 
-/* Styling for the "completed" order status */
-.order-table .completed {
-  color: #2ecc71; /* Green for completed orders */
-  font-weight: 600;
+/* Action Buttons */
+.form-actions {
+  display: flex;
+  gap: 10px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .order-table table {
-    font-size: 12px;
-  }
+.confirm-btn {
+  flex: 1;
+  background: #362465;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .order-tabs {
-    flex-direction: column;
-    gap: 10px;
-  }
+.cancel-btn {
+  flex: 1;
+  background: #ddd;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.profit-calculation,
+.loss-calculation {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #362465;
+}
 
-  .order-tabs .tab {
-    padding: 8px 15px;
-  }
+.profit-calculation p,
+.loss-calculation p {
+  margin: 2px 0;
 }

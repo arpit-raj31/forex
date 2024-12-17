@@ -1,6 +1,6 @@
 import React from "react";
 
-const Withdraw = () => {
+const Withdrawal = () => {
   const cardStyle = {
     display: "flex",
     flexDirection: "column",
@@ -46,7 +46,7 @@ const Withdraw = () => {
   };
 
   return (
-    <div>
+    <div style={{height:"100vh"}}>
       <h2 style={{ fontSize: "24px", fontWeight: "bold", margin: "20px 0" }}>Withdraw</h2>
       <h4 style={{ fontSize: "18px", color: "#555" }}>All payment methods</h4>
 
@@ -102,4 +102,4 @@ const Withdraw = () => {
   );
 };
 
-export default Withdraw;
+export default Withdrawal;

@@ -7,9 +7,10 @@ body {
 .country-select {
   width: 60px; 
   height: 35px; 
-  background-color: transparent; 
- /* Remove padding */
-  border: none; /* Remove border */
+  background-color: #362465; 
+
+  border: none; 
+  color: #362465;/* Remove border */
 }
 
 .country-select .react-flag-select {
@@ -45,6 +46,57 @@ body {
   height: 60px;
   width: 60px;
   object-fit: cover;
+}
+.notifications-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  padding: 10px;
+}
+
+.notifications-header {
+  font-size: 16px;
+  font-weight: bold;
+  color: #362465;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.notifications-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-item {
+  font-size: 14px;
+  color: #362465;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+.notifications-dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ddd;
 }
 
 /* Icons Container */
@@ -90,6 +142,49 @@ body {
   background-color: #c8b6e3; /* Fallback color */
   color: #39236C; /* Text inside avatar */
 }
+/* Wallet dropdown container */
+.wallet-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Wallet dropdown */
+.wallet-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+}
+
+/* Wallet balance title and amount */
+.wallet-balance-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.wallet-balance-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Wallet button */
+.wallet-btn .icon {
+  color: #362465;
+}
+
+.wallet-btn:hover .icon {
+  color: #362465;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
@@ -100,6 +195,23 @@ body {
     height: auto; /* Adjust height dynamically */
     padding: 4px; /* Smaller padding for mobile */
   }
+/* Wallet dropdown */
+.wallet-dropdown {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 0;
+  padding: 15px;
+  z-index: 999;
+}
+
+.wallet-balance-title,
+.wallet-balance-amount {
+  text-align: center;
+}
 
   .logo {
     visibility: visible; /* Ensure the logo is always visible */

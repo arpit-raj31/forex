@@ -16,6 +16,26 @@ body {
   z-index: 999; /* Ensure it is above other content */
   gap: 10px;
 }
+.logout-section {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.logout-button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: #ff7875;
+}
 
 /* Sidebar Open State (Mobile Only) */
 .sidebar-wrapper.open {

@@ -54,7 +54,9 @@ const OrdersTable = () => {
 
     // Tab content switcher
     const renderContent = () => (
-        <div className="rounded-md border overflow-x-auto">
+
+ 
+        <div className="rounded-md border overflow-x-auto" >
             <table className="min-w-full border-collapse text-left">
                 <thead>
                     <tr className="bg-gray-100 text-sm font-semibold text-gray-700">
@@ -87,6 +89,7 @@ const OrdersTable = () => {
     );
 
     return (
+        <div style={{height:"100vh"}}>
         <div className="space-y-4 mt-12">
             {/* Search and Filter */}
             <div className="flex gap-4 items-center">
@@ -135,6 +138,7 @@ const OrdersTable = () => {
 
             {/* Tab Content */}
             {renderContent()}
+        </div>
         </div>
     );
 };
